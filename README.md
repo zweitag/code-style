@@ -33,6 +33,10 @@ Inside each sub directory, please include a README.md describing what this direc
 Other than that the sub directories currently do not have any constraints; They could only host a single config file or the source of an own node_module.
 If the sub directory hosts source code for a published artifact (for example a node module), please link it and briefly describe prerequisites and setup.
 
+## Currently supported linters
+
+* [Rubocop](rubocop/README.md)
+
 # Contributing
 
 The fact that this repository is public has a few reasons:
