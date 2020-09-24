@@ -27,7 +27,7 @@ So try to keep the configuration as simple as possible.
 
 # Structure
 
-The repository root should – this readme aside – only contain sub directories for every linter or formatter for which we want a organization wide configuration.
+The repository root should – this readme aside – only contain sub directories for every linter or formatter for which we want an organization wide configuration.
 
 Inside each sub directory, please include a README.md describing what this directory is and *how it can be used*. Consider linking related software like the linter itself or any editor plugins that we have confirmed to be useful.
 Other than that the sub directories currently do not have any constraints; They could only host a single config file or the source of an own node_module.
@@ -37,7 +37,7 @@ If the sub directory hosts source code for a published artifact (for example a n
 
 The fact that this repository is public has a few reasons:
 
-* In projects, you might inherit a config file from a central config file living here. It would be ugly to have something like authentifaction guarding the file
+* In projects, you might inherit a config file from a central config file living here. It would be ugly to have something like authentication guarding the file
 * It is easier to access config files, for example for inheritance, from a CI pipeline
 * It can be used also for private purposes or by people not related to zweitag
 
