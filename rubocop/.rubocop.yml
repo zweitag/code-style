@@ -51,9 +51,12 @@ Style/ClassAndModuleChildren: # Each version has its own benefits depending on t
   Enabled: false
 Style/Documentation: # We currently do not enforce documentation. Do it where you feel it is useful!
   Enabled: false
+Style/EmptyMethod: # Do not allow `def foo; end` for empty methods as semicolons are discouraged in ruby
+  EnforcedStyle: expanded
 Style/FrozenStringLiteralComment: # Might be enabled in the future
   Enabled: false
+Style/Lambda: # Always use `->` instead of `lambda`, as the latter does not work with `do ... end` and we do not want to use `{ ... }` for multiline-blocks (see https://github.com/rubocop-hq/rubocop/issues/1520)
+  EnforcedStyle: literal
 Style/NumericPredicate: # Sometimes "== 0" is easier to read than .zero?
   Enabled: false
-
 ###
