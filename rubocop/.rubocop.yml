@@ -1,0 +1,62 @@
+require:
+  - 'rubocop-performance'
+  - 'rubocop-rails'
+
+AllCops:
+  Exclude:
+    - db/schema.rb # Let rails do its stuff
+    - bin/**/* # Let gems do their stuff
+    - vendor/bundle/**/* # Let gems do their stuff
+    - .pryrc # Do what you want here
+    - doc/**/*
+    - node_modules/**/*
+  NewCops: enable
+
+# Disable cops with RuFo incompabilities:
+
+Layout:
+  Enabled: false
+
+Style/Semicolon:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/TrailingMethodEndStatement:
+  Enabled: false
+Style/WhileUntilDo:
+  Enabled: false
+
+###
+
+# Disable cops with reasons:
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/* # describe or context blocks may be large
+    - config/**/* # There is no reason to artificially break up config blocks
+
+Rails/ApplicationRecord:
+  Exclude:
+    - db/migrate/* # You **should** mock models in migrations and use ActiveRecord::Base rather than ApplicationRecord!
+
+Style/ClassAndModuleChildren: # Each version has its own benefits depending on the situation
+  Enabled: false
+Style/Documentation: # We currently do not enforce documentation. Do it where you feel it is useful!
+  Enabled: false
+Style/EmptyMethod: # Do not allow `def foo; end` for empty methods as semicolons are discouraged in ruby
+  EnforcedStyle: expanded
+Style/FrozenStringLiteralComment: # Might be enabled in the future
+  Enabled: false
+Style/Lambda: # Always use `->` instead of `lambda`, as the latter does not work with `do ... end` and we do not want to use `{ ... }` for multiline-blocks (see https://github.com/rubocop-hq/rubocop/issues/1520)
+  EnforcedStyle: literal
+Style/NumericPredicate: # Sometimes "== 0" is easier to read than .zero?
+  Enabled: false
+###
