@@ -34,7 +34,7 @@ It is based on some simple principles:
 Projects which are generated from our rails template repository should automatically use this config. If you want to use it in an existing project (please do), add the following lines to the top of your project specific `.rubocop.yml`:
 ```
 inherit_from:
-  - https://raw.githubusercontent.com/zweitag/code-style/main/.rubocop.yml
+  - https://raw.githubusercontent.com/zweitag/code-style/main/rubocop/.rubocop.yml
 ```
 probably above other potential imports.
 
