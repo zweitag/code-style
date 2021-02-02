@@ -1,7 +1,18 @@
 {
   "name": "zweitag-stylelint-config",
+  "author": "Zweitag GmbH @zweitag",
+  "contributors": [
+    "Johannes Kimmeyer <johannes.kimmeyer@zweitag.de>"
+  ],
+  "keywords": [
+    "zweitag",
+    "stylelint",
+    "linter",
+    "css"
+  ],
+  "repostitory": "https://github.com/zweitag/code-style/",
   "version": "1.0.0",
-  "description": "Zweitag Stylelint configuration",
+  "description": "Zweitag Stylelint Config",
   "main": "index.js",
   "license": "MIT"
 }
