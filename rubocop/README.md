@@ -52,8 +52,16 @@ Rubocop will use all rules from our shared config and override with rules set in
 
 Since rules can be overwritten you can still have project specific settings and are not forced to use exactly the configuration from this repository. But do so with care. When you enable/disable additional rules for your project, always ask yourself:
 1. Is this really neccessary?
-2. if so, shouldn't we all use this setting, i.e. move it from your project's config to the shared one living here?
+2. If so, shouldn't we all use this setting, i.e. move it from your project's config to the shared one living here?
 3. If not, go to 1.
+
+To overwrite arrays, the [inherit_mode](https://docs.rubocop.org/rubocop/configuration.html#merging-arrays-using-inherit_mode) directive should be used. This will merge the corresponding values instead of overwriting them:
+
+```
+inherit_mode:
+  merge:
+    - Exclude
+```
 
 Ideally your .rubocop.yml should always be empty, except the inheritance statement.
 
