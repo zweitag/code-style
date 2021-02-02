@@ -10,7 +10,7 @@
     "linter",
     "css"
   ],
-  "repostitory": "https://github.com/zweitag/code-style/",
+  "repository": "https://github.com/zweitag/code-style/",
   "version": "1.0.0",
   "description": "Zweitag Stylelint Config",
   "main": "index.js",
