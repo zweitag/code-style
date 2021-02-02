@@ -4,7 +4,6 @@ module.exports = {
   "plugins": [
     "stylelint-order"
   ],
-  "ignoreFiles": ["node_modules/**/*.s+(a|c)ss"],
   "rules": {
     "at-rule-blacklist": "extend",
     "at-rule-empty-line-before": null,
