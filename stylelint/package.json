@@ -1,0 +1,7 @@
+{
+  "name": "zweitag-stylelint-config",
+  "version": "1.0.0",
+  "description": "Zweitag Stylelint configuration",
+  "main": "index.js",
+  "license": "MIT"
+}
