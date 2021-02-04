@@ -50,18 +50,22 @@ to your project's `.gitignore`.
 Rubocop will use all rules from our shared config and override with rules set in config files imported later or directly written into your project's `.rubocop.yml`. More details on inheritance can be found in the
 [rubocop documentation](https://docs.rubocop.org/rubocop/configuration.html#inheritance).
 
-Since rules can be overwritten you can still have project specific settings and are not forced to use exactly the configuration from this repository. But do so with care. When you enable/disable additional rules for your project, always ask yourself:
-1. Is this really neccessary?
-2. If so, shouldn't we all use this setting, i.e. move it from your project's config to the shared one living here?
-3. If not, go to 1.
-
-To overwrite arrays, the [inherit_mode](https://docs.rubocop.org/rubocop/configuration.html#merging-arrays-using-inherit_mode) directive should be used. This will merge the corresponding values instead of overwriting them:
+To overwrite arrays, the [inherit_mode](https://docs.rubocop.org/rubocop/configuration.html#merging-arrays-using-inherit_mode) directive should be used. This will merge the corresponding values instead of overwriting them. This is practical if, for example, you want to exclude another file without overriding (or having to repeat) centrally made exclusions:
 
 ```
 inherit_mode:
   merge:
     - Exclude
+
+AllCops:
+  Exclude:
+    - file.rb
 ```
+
+Since rules can be overwritten you can still have project specific settings and are not forced to use exactly the configuration from this repository. But do so with care. When you enable/disable additional rules for your project, always ask yourself:
+1. Is this really neccessary?
+2. If so, shouldn't we all use this setting, i.e. move it from your project's config to the shared one living here?
+3. If not, go to 1.
 
 Ideally your .rubocop.yml should always be empty, except the inheritance statement.
 
