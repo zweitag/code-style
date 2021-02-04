@@ -3,7 +3,7 @@
 
 [Stylelint](https://stylelint.io/) is a mighty, modern linter that helps you avoid errors and enforce conventions in your styles.
 ## Details
-Using [Zasaf](https://github.com/zweitag/html-css-guidelines) as our in-house approach to write modular CSS with easily maintainable and scalable stylesheets, we have a very opinionated picture of what our CSS should look like. Therefore, we decided to use a project-wide configuration and deviate from the standard rules. The configuration provided in this repository helps on the one hand to write better CSS and on the other hand to fulfil part of the goals and guidelines of Zasaf.The configuration provided in this repository helps on the one hand to write better CSS and on the other hand to fulfil part of the goals and guidelines of Zasaf.
+Using [Zasaf](https://github.com/zweitag/html-css-guidelines) as our in-house approach to write modular CSS with easily maintainable and scalable stylesheets, we have a very opinionated picture of what our CSS should look like. Therefore, we decided to use a zweitag-wide configuration and deviate from the standard rules. The configuration provided in this repository helps on the one hand to write better CSS and on the other hand to fulfil parts of the goals and guidelines of Zasaf.
 
 [The documentation](https://stylelint.io/user-guide/configure) is very good and explains each rule (and a lot more) in detail.
 
@@ -25,8 +25,15 @@ or
 npm install --save-dev zweitag-stylelint-config
 ```
 
-### Overwriting rules specifically for your project
-Situations will arise where you have to deactivate stylelint rules for certain cases. This can be done with the help of, ensure to disable only specific rules:
+Additionaly you need a `.stylelintrc.json` where you extend our global configuration:
+```json
+{
+  "extends": "zweitag-stylelint-config"
+}
+```
+
+### Adapting the configuration to your project and handling edge cases
+Situations will arise where you have to deactivate stylelint rules for certain cases. This can be done with the help of the comment ignore syntax, but ensure to disable only the specific rules:
 ```js
 // stylelint-disable-next-line [rules] -- comment
 ```
@@ -44,11 +51,12 @@ or
 ```
 There is a more detailed documentation on the [stylelint docs](https://stylelint.io/user-guide/ignore-code) available.
 
-In some cases, some rules must also be deactivated project-wide. To do this, you can simply override a rule in your `.stylelintrc.json`. If it makes sense to adapt the rule for all projects, you are welcome to create a pull request for the central configuration in this repository.
+In some cases, some rules must also be overriden or deactivated project-wide. To do this, you can simply override a rule in your `.stylelintrc.json`. If it makes sense to adapt the rule for all projects, you are welcome to create a pull request for the central configuration in this repository.
+
+If you just want to ignore some specific files, you can create a `.stylelintignore` including the common globs-patterns for the files to be ignored.
 
 ## How do I migrate an existing project?
-
-
+As you are migrating an existing project, there is a `--fix` option, auto-correcting simple errors and code smells. In case you don't want to migrate the whole project at once, you can use the [comment ignore syntax](#Adapting-the-configuration-to-your-project-and-handling-edge-cases) or the `.stylelintignore` to handle larger code smells when there is time and budget.
 
 # Adjusting the central config
 
