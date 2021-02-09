@@ -1,5 +1,5 @@
 {
-  "name": "@jkimmeyer/stylelint-config",
+  "name": "@jkimmeyer/zweitag-stylelint-config",
   "author": "Zweitag GmbH @zweitag",
   "contributors": [
     "Johannes Kimmeyer <johannes.kimmeyer@zweitag.de>"
@@ -15,8 +15,8 @@
     "stylelint-order": "^4.1.0"
   },
   "repository": "https://github.com/zweitag/code-style/",
-  "version": "1.0.1",
-  "description": "Zweitag Stylelint Config",
+  "version": "1.0.0",
+  "description": "Stylelint configuration for Zweitag Projects",
   "main": "index.js",
   "license": "MIT"
 }
