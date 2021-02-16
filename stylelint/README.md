@@ -20,15 +20,15 @@ It is based on some simple principles:
 Projects which are generated from our rails template repository should automatically use this config. The zweitag stylelint configuration is available as a package in the [npm package-registry](tbd). If you want to use it in an existing project (please do), add the package as node module:
 
 ```sh
-yarn add --dev zweitag-stylelint-config
+yarn add --dev @zweitag/stylelint-config
 or
-npm install --save-dev zweitag-stylelint-config
+npm install --save-dev @zweitag/stylelint-config
 ```
 
 Additionaly you need a `.stylelintrc.json` where you extend our global configuration:
 ```json
 {
-  "extends": "zweitag-stylelint-config"
+  "extends": "@zweitag/stylelint-config"
 }
 ```
 
