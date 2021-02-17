@@ -5,7 +5,7 @@
 ## Details
 Using [Zasaf](https://github.com/zweitag/html-css-guidelines) as our in-house approach to write modular CSS with easily maintainable and scalable stylesheets, we have a very opinionated picture of what our CSS should look like. Therefore, we decided to use a zweitag-wide configuration and deviate from the standard rules. The configuration provided in this repository helps on the one hand to write better CSS and on the other hand to fulfil parts of the goals and guidelines of Zasaf.
 
-[The documentation](https://stylelint.io/user-guide/configure) is very good and explains each rule (and a lot more) in detail.
+[The stylelint documentation](https://stylelint.io/user-guide/configure) is very good and explains each rule (and a lot more) in detail.
 
 # Our zweitag config
 
