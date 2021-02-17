@@ -17,7 +17,7 @@ It is based on some simple principles:
 
 ## Using the zweitag config
 
-Projects which are generated from our rails template repository should automatically use this config. The zweitag stylelint configuration is available as a package in the [npm package-registry](tbd). If you want to use it in an existing project (please do), add the package as node module:
+Projects which are generated from our rails template repository should automatically use this config. The zweitag stylelint configuration is available as a package in the [npm package-registry](https://www.npmjs.com/package/@zweitag/stylelint-config). If you want to use it in an existing project (please do), add the package as node module:
 
 ```sh
 yarn add --dev @zweitag/stylelint-config
