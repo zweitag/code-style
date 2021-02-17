@@ -4,6 +4,9 @@
 * [breaking] breaking change
 * [fix] Bugfix
 
+## 1.0.2
+* [update] Adapts readme
+
 ## 1.0.1
 * [update] Basic test suite added
 
