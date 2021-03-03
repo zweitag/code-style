@@ -16,7 +16,7 @@ which add additional rulesets concerned with the described topic.
 
 [The documentation](https://docs.rubocop.org/rubocop/index.html) is very good and explains each cop (and a lot more) in detail.
 
-# Our zweitag config
+# Our Zweitag config
 
 The commonly usable config file is located [here](rubocop/.rubocop.yml) in this repository.
 
@@ -29,7 +29,7 @@ It is based on some simple principles:
 1. **Exceptions should be added in a structured way**:
 (RuFo-) compatibilities and other justified exceptions in separate blocks. Inside of the blocks, sort the rules alphabetically and keep empty lines between namespaces to ease navigation.
 
-## Using the zweitag config
+## Using the Zweitag config
 
 Projects which are generated from our rails template repository should automatically use this config. If you want to use it in an existing project (please do), add the following lines to the top of your project specific `.rubocop.yml`:
 ```

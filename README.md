@@ -43,10 +43,10 @@ The fact that this repository is public has a few reasons:
 
 * In projects, you might inherit a config file from a central config file living here. It would be ugly to have something like authentication guarding the file
 * It is easier to access config files, for example for inheritance, from a CI pipeline
-* It can be used also for private purposes or by people not related to zweitag
+* It can be used also for private purposes or by people not related to Zweitag
 
 ## External contributions
-If you are not a member of zweitag you are of course free to use our configurations. But note that
+If you are not a member of Zweitag you are of course free to use our configurations. But note that
 
 * they might change
 *  we determined the rulesets in internal discussions and *might not be open for externally requested changes*
@@ -54,4 +54,4 @@ If you are not a member of zweitag you are of course free to use our configurati
 You may of course open issues or pull requests, but please don't be disappointed if they get rejected.
 
 ## Internal contributions
-If you are a member of zweitag feel free to open PRs and discuss certain decisions. If you think we reached a consensus (like, there are more people agreeing than actively disagreeing), please merge your PR.
+If you are a member of Zweitag feel free to open PRs and discuss certain decisions. If you think we reached a consensus (like, there are more people agreeing than actively disagreeing), please merge your PR.
