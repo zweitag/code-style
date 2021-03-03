@@ -4,6 +4,9 @@
 * [breaking] breaking change
 * [fix] Bugfix
 
+## 1.0.3
+* [fix] Fix typos, add new docs
+* [update] Add stylelint and stylelint-order as peer dependencies
 ## 1.0.2
 * [update] Adapts readme
 

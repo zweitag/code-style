@@ -23,7 +23,7 @@
     "stylelint-order": "^4.1.0"
   },
   "repository": "https://github.com/zweitag/code-style/",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Stylelint configuration for Zweitag Projects",
   "main": "index.js",
   "license": "MIT"
