@@ -22,9 +22,16 @@
     "stylelint": "^10.1.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
     "stylelint-order": "^4.1.0"
   },
-  "repository": "https://github.com/zweitag/code-style/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zweitag/code-style.git"
+  },
   "version": "1.0.3",
   "description": "Stylelint configuration for Zweitag Projects",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zweitag/code-style/issues"
+  },
+  "homepage": "https://github.com/zweitag/code-style#readme"
 }
