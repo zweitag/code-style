@@ -26,7 +26,7 @@
     "type": "git",
     "url": "git+https://github.com/zweitag/code-style.git"
   },
-  "version": "1.0.3.1",
+  "version": "1.0.4",
   "description": "Stylelint configuration for Zweitag Projects",
   "main": "index.js",
   "license": "MIT",
