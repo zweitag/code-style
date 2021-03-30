@@ -22,7 +22,12 @@
     "stylelint": "^10.1.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
     "stylelint-order": "^4.1.0"
   },
-  "version": "1.0.2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zweitag/code-style.git",
+    "directory": "stylelint"
+  },
+  "version": "1.0.4",
   "description": "Stylelint configuration for Zweitag Projects",
   "main": "index.js",
   "license": "MIT",
