@@ -47,6 +47,10 @@ Rails/ApplicationRecord:
   Exclude:
     - db/migrate/* # You **should** mock models in migrations and use ActiveRecord::Base rather than ApplicationRecord!
 
+Metrics/MethodLength: 
+  Max: 20 # Accepting only methods of minimal length can hurt readability
+  CountAsOne: ['array', 'heredoc', 'hash'] #  Do not incentivies against multi-line and in-method constants and declarative programming
+
 Style/ClassAndModuleChildren: # Each version has its own benefits depending on the situation
   Enabled: false
 Style/Documentation: # We currently do not enforce documentation. Do it where you feel it is useful!
