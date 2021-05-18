@@ -36,6 +36,7 @@ If the sub directory hosts source code for a published artifact (for example a n
 ## Currently supported linters
 
 * [Rubocop](rubocop/README.md)
+* [Stylelint](stylelint/README.md)
 
 # Contributing
 
