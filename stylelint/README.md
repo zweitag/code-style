@@ -49,18 +49,18 @@ or
 }
 // stylelint-enable [rules]
 ```
-There is a more detailed documentation on the [stylelint docs](https://stylelint.io/user-guide/ignore-code) available.
+There is a more detailed documentation of this feature available in the [stylelint docs](https://stylelint.io/user-guide/ignore-code).
 
 In some cases, some rules must also be overridden or deactivated project-wide. To do this, you can simply override a rule in your `.stylelintrc.json`. If it makes sense to adapt the rule for all projects, you are welcome to create a pull request for the central configuration in this repository.
 
-If you just want to ignore some specific files, you can create a `.stylelintignore` including the [github glob-pattern](https://git-scm.com/docs/gitignore) for the files to be ignored.
+If you just want to ignore some specific files, you can create a `.stylelintignore` including the [github glob-pattern](https://git-scm.com/docs/gitignore) for the files to be ignored. The `node_modules`-folder is [ignored by default](https://stylelint.io/user-guide/configure#ignorefiles).
 
 ## How do I migrate an existing project?
 As you are migrating an existing project, there is a `--fix` option, auto-correcting simple errors and code smells. In case you don't want to migrate the whole project at once, you can use the [comment ignore syntax](#Adapting-the-configuration-to-your-project-and-handling-edge-cases) or the `.stylelintignore` to handle larger code smells when there is time and budget.
 
 # Adjusting the central config
 
-If you feel that a rule that is currently enabled/disabled should be changed in the shared config
+If you feel that a rule that is currently enabled/disabled should be changed in the shared config, for example because ...
 * it doesn't make sense in our circumstances (like enforcing documentation which we usually don't)
 * or it does make absolutely no sense whatsoever
 * ...
