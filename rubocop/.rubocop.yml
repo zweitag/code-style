@@ -17,6 +17,8 @@ AllCops:
 Layout:
   Enabled: false
 
+Style/QuotedSymbols:
+  Enabled: false
 Style/Semicolon:
   Enabled: false
 Style/StringLiterals:
