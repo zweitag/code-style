@@ -5,6 +5,8 @@ require:
 AllCops:
   Exclude:
     - db/schema.rb # Let rails do its stuff
+    - db/migrate/{2015,2016,2017,2018,2019,2020}*.rb # do not enforce rule compliance on old migrations
+    - db/migrate/20210[1-6]*.rb # do not enforce rule compliance on old migrations
     - bin/**/* # Let gems do their stuff
     - vendor/bundle/**/* # Let gems do their stuff
     - .pryrc # Do what you want here
@@ -38,18 +40,9 @@ Style/WhileUntilDo:
 
 # Disable cops with reasons:
 
-Metrics/BlockLength:
-  Exclude:
-    - spec/**/* # describe or context blocks may be large
-    - config/**/* # There is no reason to artificially break up config blocks
-
 Rails/ApplicationRecord:
   Exclude:
     - db/migrate/* # You **should** mock models in migrations and use ActiveRecord::Base rather than ApplicationRecord!
-
-Metrics/MethodLength: 
-  Max: 20 # Accepting only methods of minimal length can hurt readability
-  CountAsOne: ['array', 'heredoc', 'hash'] #  Do not incentivies against multi-line and in-method constants and declarative programming
 
 Style/ClassAndModuleChildren: # Each version has its own benefits depending on the situation
   Enabled: false
@@ -63,4 +56,34 @@ Style/Lambda: # Always use `->` instead of `lambda`, as the latter does not work
   EnforcedStyle: literal
 Style/NumericPredicate: # Sometimes "== 0" is easier to read than .zero?
   Enabled: false
+###
+
+# Tune metrics cops
+
+# Background: metrics cops, although they are sometimes annoying, give you a stimulus to think about the complexity of the code.
+# So, while it is true that good code style is best ensured by peer review, pair programming or ensemble (mob) programming, it's
+# good that the metrics cops have your back and act as a last line of defense while you are wrapping your head around other
+# aspects. Therefore we soften the default limits, so that the cops are not too whiny and annouy the developers, but we keep them
+# enabled.
+# Recommendation: if you offend a metrics cop for good reason, disable that specific cop in the offending file only (see
+# https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code).
+
+Metrics/ClassLength:
+  Max: 200
+Metrics/ModuleLength:
+  Max: 200
+Metrics/MethodLength:
+  Max: 30
+  CountAsOne: ['array', 'heredoc', 'hash'] #  Do not incentivise against multi-line and in-method constants and declarative programming
+  Exclude:
+    - db/migrate/**/* # let migrations do what they need
+Metrics/BlockLength:
+  Exclude:
+    - config/**/* # There is no reason to artificially break up config blocks
+    - lib/tasks/**/*.rake
+    - spec/**/* # describe or context blocks may be large
+Metrics/ParameterLists:
+  Max: 3 # more than 3 positional arguments get confusing
+  CountKeywordArgs: false # keyword args are OK, they are way more readable than positional args
+
 ###
