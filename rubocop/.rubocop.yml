@@ -48,6 +48,8 @@ Metrics/BlockLength:
 Rails/ApplicationRecord:
   Exclude:
     - db/migrate/* # You **should** mock models in migrations and use ActiveRecord::Base rather than ApplicationRecord!
+Rails/EnvironmentVariableAccess:
+  Enabled: true # Disabled by default, but as we typically use a wrapper class to manage ENV-variables, it should be enabled
 
 Style/ClassAndModuleChildren: # Each version has its own benefits depending on the situation
   Enabled: false
