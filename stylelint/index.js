@@ -254,6 +254,7 @@ module.exports = {
       "align-self",
       "align-items",
       "align-content",
+      "gap",
       "columns",
       "column-span",
       "column-width",
