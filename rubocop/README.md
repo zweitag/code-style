@@ -69,6 +69,18 @@ Since rules can be overwritten you can still have project specific settings and 
 
 Ideally your .rubocop.yml should always be empty, except the inheritance statement.
 
+## Dealing with Metrics cops offenses
+
+### Why we enabled the Metrics cops
+
+We enabled cops from the [Metrics](https://docs.rubocop.org/rubocop/cops.html#metrics) department. They are based on some numerical measure about the source code. As such, they are much "softer" than other cops. Any `Max` limit that we configure will be wrong in a sense, and any offense might lead to discussions ("Why is this method with an ABC size metric value of 43 OK, and this other method with a value of 44 not? Why is the limit exactly 43?").
+
+The Rubocop default values for Metrics cops are tuned rather low. This will lead to many offenses, many discussions, and eventually in developers turning them off altogether. We propose to view the Metrics cops differently: as a _last line of defense_. Good code comes from peer review, pair programming, talking about good code and being conscious about it. But it is helpful that the cops have your back when you are wrapping your head around other aspects. Therefore, we tuned the Metrics cops limits to be much higher than the Rubocop defaults, by factor 1.5 to 3.
+
+### Disabling a cop for a specific offense
+
+If you offend a metrics cop for good reason, disable that specific cop in the offending file only, either for the specific location only, or for the whole file, [by adding a special rubocop:disable comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code).
+
 ## How do I migrate an existing project?
 
 After following the instructions above you will most likely have lots of offenses against the new rules. Do not despair! Rubocop has a solution for this:
