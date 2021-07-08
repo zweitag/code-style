@@ -81,7 +81,7 @@ The Rubocop default values for Metrics cops are tuned rather low. This will lead
 
 If you offend a metrics cop for good reason, disable that specific cop in the offending file only, either for the specific location only, or for the whole file, [by adding a special rubocop:disable comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code).
 
-## How do I migrate an existing project?
+## Migrating an existing project
 
 After following the instructions above you will most likely have lots of offenses against the new rules. Do not despair! Rubocop has a solution for this:
 [Automatically generated ToDo configs](https://docs.rubocop.org/rubocop/configuration.html#automatically-generated-configuration).
@@ -96,7 +96,7 @@ To tick off your todo list, just remove an exception from the rubocop_todo confi
 You might want to fix the offenses in multiple PRs to make them easier to review and revert.
 
 This way you should either get rid of all exceptions or come to the conclusion that a cop does not fit our needs and that an exception should be added to the shared config here.
-If you find that a rule is sensible but you also think a violation is justified at some point you can [disable rules in your code by a comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code) (even inline comments since newer rubocop version).
+If you find that a rule is sensible but you also think an offense is justified at some point you can [disable rules in your code by a comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code) (even inline comments since newer rubocop version).
 
 # Adjusting the central config
 
