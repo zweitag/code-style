@@ -45,7 +45,7 @@ Since the remote file will be cached locally you can still run rubocop offline. 
 ```
 to your project's `.gitignore`.
 
-### Overwriting rules specifically for your project
+## Overwriting rules specifically for your project
 
 Rubocop will use all rules from our shared config and override with rules set in config files imported later or directly written into your project's `.rubocop.yml`. More details on inheritance can be found in the
 [rubocop documentation](https://docs.rubocop.org/rubocop/configuration.html#inheritance).
@@ -69,12 +69,24 @@ Since rules can be overwritten you can still have project specific settings and 
 
 Ideally your .rubocop.yml should always be empty, except the inheritance statement.
 
-## How do I migrate an existing project?
+## Dealing with Metrics cops offenses
+
+### Why we enabled the Metrics cops
+
+We enabled cops from the [Metrics](https://docs.rubocop.org/rubocop/cops.html#metrics) department. They are based on some numerical measure about the source code. As such, they are much "softer" than other cops. Any `Max` limit that we configure will be wrong in a sense, and any offense might lead to discussions ("Why is this method with an ABC size metric value of 43 OK, and this other method with a value of 44 not? Why is the limit exactly 43?").
+
+The Rubocop default values for Metrics cops are tuned rather low. This will lead to many offenses, many discussions, and eventually in developers turning them off altogether. We propose to view the Metrics cops differently: as a _last line of defense_. Good code comes from peer review, pair programming, talking about good code and being conscious about it. But it is helpful that the cops have your back when you are wrapping your head around other aspects. Therefore, we tuned the Metrics cops limits to be much higher than the Rubocop defaults, by factor 1.5 to 3.
+
+### Disabling a cop for a specific offense
+
+If you offend a metrics cop for good reason, disable that specific cop in the offending file only, either for the specific location only, or for the whole file, [by adding a special rubocop:disable comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code). Tip: use `rubocop:disable` when you want to disable the cop permanently, and use `rubocop:todo` when you want to disable the cop temporarily and plan to fix the offense later.
+
+## Migrating an existing project
 
 After following the instructions above you will most likely have lots of offenses against the new rules. Do not despair! Rubocop has a solution for this:
 [Automatically generated ToDo configs](https://docs.rubocop.org/rubocop/configuration.html#automatically-generated-configuration).
 
-By running `rubocop --auto-gen-config`, rubocop generates a new file `.rubocop_todo.yml` where all rules are disabled which your code currently violates. ***Note**: You might have to adjust your `.rubocop.yml` file because the todo.yml gets added automatically as an inheritence which sometimes crashes with manually added ancestor files like our shared config!*
+By running `rubocop --auto-gen-config`, rubocop generates a new file `.rubocop_todo.yml` where all rules are disabled which your code currently violates. ***Note**: You might have to adjust your `.rubocop.yml` file because the todo.yml gets added automatically as an inheritance which sometimes crashes with manually added ancestor files like our shared config!*
 
 You can check this file in and postpone resolving the conflicts one by one when there is time, budget and patience.
 
@@ -84,7 +96,7 @@ To tick off your todo list, just remove an exception from the rubocop_todo confi
 You might want to fix the offenses in multiple PRs to make them easier to review and revert.
 
 This way you should either get rid of all exceptions or come to the conclusion that a cop does not fit our needs and that an exception should be added to the shared config here.
-If you find that a rule is sensible but you also think a violation is justified at some point you can [disable rules in your code by a comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code) (even inline comments since newer rubocop version).
+If you find that a rule is sensible but you also think an offense is justified at some point you can [disable rules in your code by a comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code) (even inline comments since newer rubocop version).
 
 # Adjusting the central config
 
