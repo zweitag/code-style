@@ -74,7 +74,7 @@ Ideally your .rubocop.yml should always be empty, except the inheritance stateme
 After following the instructions above you will most likely have lots of offenses against the new rules. Do not despair! Rubocop has a solution for this:
 [Automatically generated ToDo configs](https://docs.rubocop.org/rubocop/configuration.html#automatically-generated-configuration).
 
-By running `rubocop --auto-gen-config`, rubocop generates a new file `.rubocop_todo.yml` where all rules are disabled which your code currently violates. ***Note**: You might have to adjust your `.rubocop.yml` file because the todo.yml gets added automatically as an inheritence which sometimes crashes with manually added ancestor files like our shared config!*
+By running `rubocop --auto-gen-config`, rubocop generates a new file `.rubocop_todo.yml` where all rules are disabled which your code currently violates. ***Note**: You might have to adjust your `.rubocop.yml` file because the todo.yml gets added automatically as an inheritance which sometimes crashes with manually added ancestor files like our shared config!*
 
 You can check this file in and postpone resolving the conflicts one by one when there is time, budget and patience.
 
