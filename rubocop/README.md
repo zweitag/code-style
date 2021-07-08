@@ -79,7 +79,7 @@ The Rubocop default values for Metrics cops are tuned rather low. This will lead
 
 ### Disabling a cop for a specific offense
 
-If you offend a metrics cop for good reason, disable that specific cop in the offending file only, either for the specific location only, or for the whole file, [by adding a special rubocop:disable comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code).
+If you offend a metrics cop for good reason, disable that specific cop in the offending file only, either for the specific location only, or for the whole file, [by adding a special rubocop:disable comment](https://docs.rubocop.org/rubocop/configuration.html#disabling-cops-within-source-code). Tip: use `rubocop:disable` when you want to disable the cop permanently, and use `rubocop:todo` when you want to disable the cop temporarily and plan to fix the offense later.
 
 ## Migrating an existing project
 
