@@ -45,7 +45,7 @@ Since the remote file will be cached locally you can still run rubocop offline. 
 ```
 to your project's `.gitignore`.
 
-### Overwriting rules specifically for your project
+## Overwriting rules specifically for your project
 
 Rubocop will use all rules from our shared config and override with rules set in config files imported later or directly written into your project's `.rubocop.yml`. More details on inheritance can be found in the
 [rubocop documentation](https://docs.rubocop.org/rubocop/configuration.html#inheritance).
